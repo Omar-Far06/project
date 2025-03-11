@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center text-xl font-bold text-gray-800 dark:text-white">
               <BookOpen className="w-6 h-6 mr-2" />
-              <span>عبدو باشا</span>
+              <span> عبدو باشا </span>
             </Link>
           </div>
           <div className="flex items-center space-x-4 rtl:space-x-reverse">
