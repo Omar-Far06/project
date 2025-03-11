@@ -8,7 +8,7 @@ interface BookCardProps {
 export const BookCard: React.FC<BookCardProps> = ({ book }) => {
   const handlePurchase = () => {
     const message = `مرحباً، أود شراء كتاب "${book.title}"`;
-    const whatsappUrl = `https://wa.me/+201234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+201554229848?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -33,7 +33,7 @@ export const BookCard: React.FC<BookCardProps> = ({ book }) => {
             onClick={handlePurchase}
             className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition-colors"
           >
-            شراء عبر الواتس ابب
+            شراء عبر الواتساب
           </button>
         </div>
       </div>
