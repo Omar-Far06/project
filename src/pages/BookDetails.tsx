@@ -92,7 +92,7 @@ export const BookDetails: React.FC = () => {
                             <button
                                 onClick={() => {
                                     const message = `مرحباً، أود شراء كتاب "${book.title}"`;
-                                    const whatsappUrl = `https://wa.me/+201234567890?text=${encodeURIComponent(message)}`;
+                                    const whatsappUrl = `https://wa.me/+201554229848?text=${encodeURIComponent(message)}`;
                                     window.open(whatsappUrl, '_blank');
                                 }}
                                 className="w-full bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
