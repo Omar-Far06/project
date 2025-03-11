@@ -33,7 +33,7 @@ export const About: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 ml-2" />
-                  <span>+20 123 456 7890</span>
+                  <span>+201554229848</span>
                 </div>
                 
                 <div className="flex items-center">
