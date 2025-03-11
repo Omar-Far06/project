@@ -5,21 +5,23 @@ import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
 import { Shop } from './pages/Shop';
 import { About } from './pages/About';
+import { BookDetails } from './pages/BookDetails';
 
 function App() {
   return (
-    <ThemeProvider>
-      <Router>
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </div>
-      </Router>
-    </ThemeProvider>
+      <ThemeProvider>
+        <Router>
+          <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/book/:id" element={<BookDetails />} />
+            </Routes>
+          </div>
+        </Router>
+      </ThemeProvider>
   );
 }
 
