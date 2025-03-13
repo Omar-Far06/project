@@ -31,87 +31,88 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Hero Slider */}
-      <div className="relative">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation, EffectFade]}
-          effect="fade"
-          spaceBetween={0}
-          slidesPerView={1}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          navigation
-          loop={true}
-          className="h-[60vh] w-full"
-        >
-          {heroSlides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="relative w-full h-full">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ 
-                    backgroundImage: `url(${slide.image})`,
-                  }}
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-50" />
-                </div>
-                <div className="relative h-full flex items-center justify-center text-center px-4">
-                  <div className="max-w-3xl">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                      {slide.title}
-                    </h2>
-                    <p className="text-xl text-gray-200">
-                      {slide.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* New Books Slider */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            أحدث الإصدارات
-          </h2>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        {/* Hero Slider */}
+        <div className="relative">
           <Swiper
-            modules={[Autoplay, Pagination, Navigation]}
-            spaceBetween={30}
-            slidesPerView={1}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            navigation
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              768: { slidesPerView: 3 },
-            }}
-            loop={true}
-            className="pb-12"
+              modules={[Autoplay, Pagination, Navigation, EffectFade]}
+              effect="fade"
+              spaceBetween={0}
+              slidesPerView={1}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              navigation
+              loop={true}
+              className="h-[60vh] w-full"
           >
-            {newBooks.map(book => (
-              <SwiperSlide key={book.id}>
-                <BookCard book={book} />
-              </SwiperSlide>
+            {heroSlides.map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <div className="relative w-full h-full">
+                    <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{
+                          backgroundImage: `url(${slide.image})`,
+                        }}
+                    >
+                      <div className="absolute inset-0 bg-black bg-opacity-50" />
+                    </div>
+                    <div className="relative h-full flex items-center justify-center text-center px-4">
+                      <div className="max-w-3xl">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                          {slide.title}
+                        </h2>
+                        <p className="text-xl text-gray-200">
+                          {slide.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
             ))}
           </Swiper>
-        </section>
+        </div>
 
-        {/* On Sale Books */}
-        <section>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            عروض خاصة
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {onSaleBooks.map(book => (
-              <BookCard key={book.id} book={book} />
-            ))}
-          </div>
-        </section>
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          {/* New Books Slider */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              أحدث الإصدارات
+            </h2>
+            <Swiper
+                modules={[Autoplay, Pagination, Navigation]}
+                spaceBetween={24}
+                slidesPerView={1}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                navigation
+                breakpoints={{
+                  640: { slidesPerView: 2 },
+                  768: { slidesPerView: 3 },
+                  1024: { slidesPerView: 4 }
+                }}
+                loop={true}
+                className="pb-12"
+            >
+              {newBooks.map(book => (
+                  <SwiperSlide key={book.id}>
+                    <BookCard book={book} />
+                  </SwiperSlide>
+              ))}
+            </Swiper>
+          </section>
+
+          {/* On Sale Books */}
+          <section>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              عروض خاصة
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {onSaleBooks.map(book => (
+                  <BookCard key={book.id} book={book} />
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
   );
 };
